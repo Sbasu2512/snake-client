@@ -11,16 +11,11 @@ const web = function () {
     });
   
     connect.setEncoding("utf-8");
-
+//event handler. event name: data. socket methods will refer to client side
     connect.on('data', (data) => {
       console.log('Server says: ', data);
     });
     
-
-    // connect.on('data',(input)=>{
-    //   client.write('Sayantan says',input);
-    // });
-
 }
 
 
