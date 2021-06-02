@@ -11,15 +11,6 @@ const setupInput = function () {
   stdin.on("data", handleUserInput)
   return stdin;
 };
-//Send the string "Move: up" as data to the server via the conn object.
-// stdin.on("data", handleUserInput);
-// connect.on('connect',()=>{
-  
-//   // connect.write("move: up");
-//   // connect.write("move: left");
-//   // connect.write("move: down");
-//   // connect.write("move: right");
-// })
 
 const handleUserInput = function(key) {
   //connect.write("name: SB"); 
