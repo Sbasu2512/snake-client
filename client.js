@@ -15,6 +15,15 @@ const web = function () {
       console.log('Server says: ', data);
     });
 
+    connect.on('connect',()=>{
+      connect.write("name: SB");
+      connect.write("move: up");
+      connect.write("move: down");
+      connect.write("move: left");
+      connect.write("move: right");
+    })
+    
+
     stdin.on('data', (whatYouTyped) => {
       connect.write(`${initials} ${whatYouTyped}`);
     })
