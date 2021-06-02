@@ -9,5 +9,3 @@ const connect = require('/client.js');
 
 
 
-console.log("connecting....");
-web();
