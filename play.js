@@ -1,5 +1,8 @@
-const Connection = require('/client.js');
+const web = require('./client');
 
+
+
+web();
 
 
 
