@@ -11,22 +11,17 @@ const web = function () {
     });
     connect.setEncoding("utf-8");
 //event handler. event name: data. socket methods will refer to client side
-    connect.on('data', (data) => {
-      console.log('Server says: ', data);
+    connect.on('connect', (data) => {
+       
+      // console.log('Server says: ', data);
     });
 
-    connect.on('connect',()=>{
-      connect.write("name: SB");
-      connect.write("move: up");
-      connect.write("move: down");
-      connect.write("move: left");
-      connect.write("move: right");
-    })
+    
     
 
-    stdin.on('data', (whatYouTyped) => {
-      connect.write(`${initials} ${whatYouTyped}`);
-    })
+    // stdin.on('data', (whatYouTyped) => {
+    //   connect.write(`${initials} ${whatYouTyped}`);
+    // })
     return connect; //
 }
 
