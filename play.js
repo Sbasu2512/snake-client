@@ -1,13 +1,17 @@
+//const { connect } = require("http2");
 const net = require("net");
 
 const web = function () {
-  net.createConnection(
+  const connect = net.createConnection(
     {
       host:'135.23.222.131',
       port: 50542
     });
   
-    web.setEncoding("utf-8");
+    connect.setEncoding("utf-8");
 
     return web;
 }
+
+console.log("connecting....");
+web();
