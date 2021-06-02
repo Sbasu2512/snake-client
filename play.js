@@ -2,13 +2,6 @@ const web = require('./client');
 
 const connect = web();  
 
-connect.on('connect',()=>{
-  connect.write("SB");
-})
-connect.on('data',(c)=>{
-  c.write("move: up");
-})
-
 // setup interface to handle user input from stdin
 const setupInput = function () {
   const stdin = process.stdin;
@@ -18,6 +11,21 @@ const setupInput = function () {
   return stdin;
 };
 
+// stdin.on("data", handleUserInput);
+
+// const handleUserInput = function(data) {
+//   process.stdin.on('data', (key) => {
+//     if(key.includes("move up")){
+
+//     }else if(key.includes("move down")){
+
+//     }else if(key.includes("move left")){
+
+//     }else if(key.includes("move right")){
+
+//     }
+//   });
+// }
 
 
 
