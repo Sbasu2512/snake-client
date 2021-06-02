@@ -1,3 +1,4 @@
+const net = require("net");
 const web = function () {
   const connect = net.createConnection(
     {
@@ -15,4 +16,8 @@ const web = function () {
     
 }
 
-module.exports = connect ;
+console.log("Establishing connection to server");
+web();
+console.log("Connection Established");
+
+module.exports = web;
