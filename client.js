@@ -1,5 +1,8 @@
 const net = require("net");
 const web = function () {
+  const stdin = process.stdin;
+  //const name = "Sayantan Basu";
+  const initials = "SB";
   const connect = net.createConnection(
     {
       host:'135.23.222.131',
@@ -14,6 +17,9 @@ const web = function () {
       console.log('Server says: ', data);
     });
     
+    stdin.on('data',(input)=>{
+      client.write(`${initials} : ${input}`);
+    })
 }
 
 console.log("Establishing connection to server");
