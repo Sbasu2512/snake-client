@@ -1,6 +1,3 @@
-
-
-
 const setupInput = function () {
   const stdin = process.stdin;
   stdin.setRawMode(true);
@@ -29,3 +26,5 @@ const handleUserInput = function(key) {
     console.log("D")
   }
 }
+
+module.exports = setupInput ;
