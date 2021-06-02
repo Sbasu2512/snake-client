@@ -1,10 +1,10 @@
 const web = require('./client');
 
+const connect = web();  
 
-
-web();
-
-
+connect.on('connect',()=>{
+  connect.write("Name: SB");
+})
 
 
 
