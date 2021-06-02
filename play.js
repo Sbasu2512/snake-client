@@ -23,7 +23,7 @@ const setupInput = function () {
 
 const handleUserInput = function(key) {
   //connect.write("name: SB"); 
-  connect.write("Name: GD");
+  connect.write("Name: SB");
   if (key === '\u0003') {
     process.exit();
   }else if(key === '\u0077'){
@@ -39,18 +39,6 @@ const handleUserInput = function(key) {
     connect.write("Move: right");
     console.log("D")
   }
-  //   connect.write("Move: up");
-  // }
-  //   if(key.includes("move up")){
-
-  //   }else if(key.includes("move down")){
-
-  //   }else if(key.includes("move left")){
-
-  //   }else if(key.includes("move right")){
-
-  //   }
-  // }
 }
 
 setupInput()
