@@ -11,23 +11,25 @@ const setupInput = function () {
 };
 
 const handleUserInput = function(key) {
-  //connect.write("name: SB"); 
+  //con.write("name: SB"); 
+  
   con.write("Name: SB");
   if (key === '\u0003') {
     process.exit();
   }else if(key === '\u0077' || key === '\u2191'){
     con.write("Move: up");
-    console.log("W");
+    console.log("Up");
   }else if(key === '\u0073' || key === '\u2193'){
     con.write("Move: down");
-    console.log("S")
+    console.log("Down");
   }else if(key === '\u0061' || key === '\u2190'){
     con.write("Move: left");
-    console.log("A")
+    console.log("Left");
   }else if(key === '\u0064' || key === '\u2192'){
     con.write("Move: right");
-    console.log("D")
+    console.log("Right");
   }
 }
+
 
 module.exports = setupInput ;
