@@ -1,18 +1,18 @@
-const connect = require('./client');
-let con = connect();
+let con ;
 
-const setupInput = function () {
+const setupInput = function (result) {
+  con = result ;
   const stdin = process.stdin;
   stdin.setRawMode(true);
   stdin.setEncoding("utf8");
   stdin.resume();
-  stdin.on("data", handleUserInput)
+  stdin.on("data", handleUserInput);
+  stdin.on("data", messages);
   return stdin;
 };
 
 const handleUserInput = function(key) {
   //con.write("name: SB"); 
-  
   con.write("Name: SB");
   if (key === '\u0003') {
     process.exit();
@@ -29,7 +29,21 @@ const handleUserInput = function(key) {
     con.write("Move: right");
     console.log("Right");
   }
+  
 }
-
+//con.write(`Say: ${input}`);
+const messages = (key) => {
+  //sending messages! //num 1 key
+  if (key === "\u0031") {
+    //1
+    con.write(`Say: HEY`);
+    //num 2 
+  } else if (key === "\u0032") {
+    con.write("Say: wyd");
+    //num 3
+  } else if (key === "\u0033") {
+    con.write("Say: bye");
+  }
+};
 
 module.exports = setupInput ;
