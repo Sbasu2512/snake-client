@@ -13,6 +13,7 @@ const setupInput = function () {
 
 const handleUserInput = function(key) {
   //con.write("name: SB"); 
+  
   con.write("Name: SB");
   if (key === '\u0003') {
     process.exit();
