@@ -1,16 +1,24 @@
 const net = require("net");
+const { IP, PORT, char } = require("./constants");
 const web = function () {
   const stdin = process.stdin;
   stdin.setEncoding("utf-8");
   //const initials = "SB";
   const connect = net.createConnection(
     {
-      host:'135.23.222.131',
-      port: 50542,
+      host:IP,
+      port: PORT,
     },()=>{
       console.log("connection created....");
     });
-    connect.setEncoding("utf-8");
+    connect.setEncoding(char);
+    connect.on('connect', (error) => {
+      console.log("connected to server");
+      if(error){
+        console.log("error:",error);
+        
+      }
+   });
     connect.on('data', (data) => {
       console.log('Server says: ', data);
    });

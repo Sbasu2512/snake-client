@@ -1,49 +1,53 @@
+const { char, exit, w, a, s, d, up, down, left, right, hey, yolo, bye, wyd, brb } = require("./constants");
 let con ;
 
 const setupInput = function (result) {
   con = result ;
   const stdin = process.stdin;
   stdin.setRawMode(true);
-  stdin.setEncoding("utf8");
+  stdin.setEncoding(char);
   stdin.resume();
   stdin.on("data", handleUserInput);
-  stdin.on("data", messages);
   return stdin;
 };
 
 const handleUserInput = function(key) {
   //con.write("name: SB"); 
   con.write("Name: SB");
-  if (key === '\u0003') {
+  if (key === exit) {
     process.exit();
-  }else if(key === '\u0077' || key === '\u2191'){
+  }else if(key === w || key === up){
     con.write("Move: up");
     console.log("Up");
-  }else if(key === '\u0073' || key === '\u2193'){
+  }else if(key === s || key === down){
     con.write("Move: down");
     console.log("Down");
-  }else if(key === '\u0061' || key === '\u2190'){
+  }else if(key === a || key === left){
     con.write("Move: left");
     console.log("Left");
-  }else if(key === '\u0064' || key === '\u2192'){
+  }else if(key === d || key === right){
     con.write("Move: right");
     console.log("Right");
+  }
+
+  if(key === hey){
+    con.write("Say: hey");
+    console.log("hey");
+  }else if(key === yolo){
+    con.write("Say: YOL");
+    console.log("YOLO");
+  }else if(key === brb){
+    con.write("Say: brb");
+    console.log("BRB");
+  }else if(key === bye){
+    con.write("Say: bye");
+    console.log("BYE");
+  }else if(key === wyd){
+    con.write("Say: wyd");
+    console.log("WYD");
   }
   
 }
 //con.write(`Say: ${input}`);
-const messages = (key) => {
-  //sending messages! //num 1 key
-  if (key === "\u0031") {
-    //1
-    con.write(`Say: HEY`);
-    //num 2 
-  } else if (key === "\u0032") {
-    con.write("Say: wyd");
-    //num 3
-  } else if (key === "\u0033") {
-    con.write("Say: bye");
-  }
-};
 
 module.exports = setupInput ;
